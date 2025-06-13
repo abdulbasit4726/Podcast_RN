@@ -7,24 +7,15 @@ const SearchScreen = () => {
 
   const [query, setQuery] = useState("");
 
-  return (
-    <ScrollView contentInsetAdjustmentBehavior="automatic">
-      <View style={styles.searchWrapper}>
-        <TextInput
-          placeholder="Search..."
-          placeholderTextColor="#888"
-          value={query}
-          onChangeText={setQuery}
-          style={styles.searchInput}
-        />
-      </View>
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerSearchBarOptions: {
+        placeholder: "Search...",
+      },
+    });
+  }, [navigation]);
 
-      {/* Your search results or content here */}
-      <View style={styles.content}>
-        <Text style={styles.resultText}>Search Query: {query}</Text>
-      </View>
-    </ScrollView>
-  );
+  return <ScrollView contentInsetAdjustmentBehavior="automatic"></ScrollView>;
 };
 
 export default SearchScreen;
