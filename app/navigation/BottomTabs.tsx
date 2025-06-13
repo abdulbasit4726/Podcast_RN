@@ -39,11 +39,12 @@ const BottomTabs = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
+        headerShown: false,
         tabBarActiveTintColor: "purple",
         tabBarIcon: ({ color, size }) => {
           let iconName: any;
 
-          if (route.name === "Search") iconName = "settings-outline";
+          if (route.name === "Search") iconName = "search-outline";
           else if (route.name === "Downloads") iconName = "download-outline";
           else if (route.name === "Favorites") iconName = "heart-outline";
 
@@ -54,17 +55,14 @@ const BottomTabs = () => {
       <Tab.Screen
         name={"Search"}
         component={() => LargeTitleScreen("Search")}
-        options={{ headerShown: false }}
       />
       <Tab.Screen
         name={"Favorites"}
         component={() => LargeTitleScreen("Favorites")}
-        options={{ headerShown: false }}
       />
       <Tab.Screen
         name={"Downloads"}
         component={() => LargeTitleScreen("Downloads")}
-        options={{ headerShown: false }}
       />
     </Tab.Navigator>
   );
