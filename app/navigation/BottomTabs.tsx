@@ -39,6 +39,7 @@ const BottomTabs = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
+        tabBarStyle: { backgroundColor: "white" },
         headerShown: false,
         tabBarActiveTintColor: "purple",
         tabBarIcon: ({ color, size }) => {
@@ -54,7 +55,8 @@ const BottomTabs = () => {
     >
       <Tab.Screen
         name={"Search"}
-        component={() => LargeTitleScreen("Search")}
+        options={{ headerShown: false }}
+        component={SearchScreen}
       />
       <Tab.Screen
         name={"Favorites"}
