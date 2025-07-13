@@ -67,9 +67,9 @@ const SearchScreen = () => {
                 source={{ uri: item.artworkUrl100 }}
                 style={styles.itemImage}
               />
-              <View style={{ flex: 1, marginLeft: 8, gap: 8 }}>
+              <View style={{ flex: 1, marginLeft: 16, gap: 6 }}>
                 <Text
-                  style={{ fontSize: 18, fontWeight: "500" }}
+                  style={{ fontSize: 18, fontWeight: "600" }}
                   numberOfLines={2}
                 >
                   {item.trackName}
@@ -77,9 +77,13 @@ const SearchScreen = () => {
                 <Text style={{ fontSize: 14 }} numberOfLines={1}>
                   {item.artistName}
                 </Text>
+                <Text style={{ fontSize: 12, color: "gray" }} numberOfLines={1}>
+                  {item.trackCount} Episodes
+                </Text>
                 <View
                   style={{
                     height: StyleSheet.hairlineWidth,
+                    marginTop: 4,
                     backgroundColor: "gray",
                   }}
                 />
@@ -127,7 +131,7 @@ const styles = StyleSheet.create({
   itemContainer: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 8,
+    paddingTop: 24,
   },
   itemImage: {
     width: 68,
